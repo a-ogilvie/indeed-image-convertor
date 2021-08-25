@@ -28,7 +28,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "prepare": "cd .. && husky install front/.husky",
-    "lint-staged": "lint-staged"
+    "pre-commit": "lint-staged"
   },
   "eslintConfig": {
     "extends": [
