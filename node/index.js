@@ -33,7 +33,6 @@ async function run() {
     for (let y = 0; y < height; y++) {
       const inputColour = Jimp.intToRGBA(input.getPixelColour(x, y));
 
-      /** @type {Colour} */
       let closestColour = memo.get(colourToString(inputColour));
 
       if (!closestColour) {
@@ -85,7 +84,7 @@ function colourToString(colour) {
 function getClosestColour(inputColour) {
   let closestDistance = Infinity;
   /** @type {Colour} */
-  let closestColour = null;
+  let closestColour = { r: 0, g: 0, b: 0, a: 0 };
 
   for (const expressiveColour of expressiveColours) {
     const distance = Math.sqrt(

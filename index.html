@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Indeed Image Convertor</title>
+    <meta
+      name="description"
+      content="Convert any image to use Indeed-approved colours."
+    />
+
+    <meta property="og:title" content="Indeed Image Convertor" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Convert any image to use Indeed-approved colours."
+    />
+  </head>
+
+  <body>
+    <input type="file" accept="image/*" onchange="onFileUpload(event)" />
+    <br />
+    <img id="input" />
+    <button onclick="convertImage()">Convert Image</button>
+    <img id="output" />
+
+    <script src="expressiveColours.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
