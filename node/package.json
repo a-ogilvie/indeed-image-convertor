@@ -1,0 +1,15 @@
+{
+  "name": "indeed-image-convertor",
+  "version": "0.0.1",
+  "description": "Convert any image to use Indeed-approved colours.",
+  "main": "index.js",
+  "author": "Alexander Ogilvie",
+  "license": "ISC",
+  "dependencies": {
+    "jimp": "0.16.1"
+  },
+  "engines": {
+    "node": "14",
+    "npm": "7"
+  }
+}
