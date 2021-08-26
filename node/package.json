@@ -1,7 +1,7 @@
 {
   "name": "indeed-image-convertor",
   "version": "0.0.1",
-  "description": "Convert any image to use Indeed-approved colours.",
+  "description": "Convert any image to use Indeed-approved colours. (Summer Hackathon 2021)",
   "main": "index.js",
   "author": "Alexander Ogilvie",
   "license": "ISC",
