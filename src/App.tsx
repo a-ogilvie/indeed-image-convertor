@@ -1,8 +1,6 @@
-// import React from 'react'
 import './App.css'
 import { AppProvider } from 'context'
-import InputArea from './InputArea'
-import OutputArea from './OutputArea'
+import Slider from './Slider'
 import { FileUploader } from 'components/FileUploader'
 
 function App() {
@@ -27,8 +25,7 @@ function App() {
         </figure>
         <FileUploader />
         <div className="pictureBox">
-          <InputArea />
-          <OutputArea />
+          <Slider />
         </div>
         <footer>
           <p>
@@ -36,8 +33,8 @@ function App() {
             device.
           </p>
           <p>
-            Created for Indeed Summer Hackathon 2021 by A Ogilvie, CK Hung, C
-            Yang, M Stemm.
+            Created for Indeed Summer Hackathon 2021 by aogilvie, chung, cyang,
+            mstemm.
           </p>
         </footer>
       </AppProvider>

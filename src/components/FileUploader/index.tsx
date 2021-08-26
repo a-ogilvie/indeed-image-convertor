@@ -128,6 +128,7 @@ export const FileUploader = () => {
         className="file-uploader__input"
         onChange={onFileChanged}
         accept="image/*"
+        style={{ textAlignLast: 'center' }}
       />
     </FileUploaderPresentationalComponent>
   )
