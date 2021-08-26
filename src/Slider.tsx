@@ -32,6 +32,14 @@ const Slider = () => {
         }
         onlyHandleDraggable={true}
       />
+      <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+        <a
+          href={after || `${PUBLIC_URL}/result_hackathon.png`}
+          download="indeed_converted"
+        >
+          <button>Download</button>
+        </a>
+      </div>
     </>
   )
 }
