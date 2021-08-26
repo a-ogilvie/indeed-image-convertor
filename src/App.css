@@ -5,14 +5,14 @@
 .file-uploader {
   width: 300px;
   height: 150px;
-  border: 2px solid steelblue;
+  border: 2px solid #003A9B;
   border-radius: 8px;
   padding: 10px;
   font-size: 16px;
 }
 
 .file-uploader--dragging {
-  background-color: lightblue;
+  border-color: #9d2b6b;
 }
 
 .file-uploader__contents {
@@ -42,7 +42,7 @@
   }
 }
 .inputBox, .outputBox {
-  border: 2px solid silver;
+  border: 2px solid #2d2d2d;
   width: 100%;
   min-height: inherit;
 }
@@ -52,7 +52,7 @@
 .inputBox > div, .outputBox > div  {
   font-size: 1.5em;
   font-family: Helvetica, sans-serif;
-  color: steelblue;
+  color: #003A9B;
   font-weight: bold;
   margin-top: 50px;
 }
@@ -63,12 +63,12 @@
   width: 11em;
   height: 11em;
   border-radius: 50%;
-  background: #162C5B;
-  background: -moz-linear-gradient(left, #162C5B 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #162C5B 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #162C5B 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #162C5B 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #162C5B 10%, rgba(255, 255, 255, 0) 42%);
+  background: #003a9b;
+  background: -moz-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -79,7 +79,7 @@
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #162C5B;
+  background: #003a9b;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
