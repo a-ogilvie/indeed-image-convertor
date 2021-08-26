@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/indeed-image-convertor/static/css/main.8f118ed1.chunk.css",
-    "main.js": "/indeed-image-convertor/static/js/main.645ec380.chunk.js",
-    "main.js.map": "/indeed-image-convertor/static/js/main.645ec380.chunk.js.map",
+    "main.css": "/indeed-image-convertor/static/css/main.97413abb.chunk.css",
+    "main.js": "/indeed-image-convertor/static/js/main.453cdd4e.chunk.js",
+    "main.js.map": "/indeed-image-convertor/static/js/main.453cdd4e.chunk.js.map",
     "runtime-main.js": "/indeed-image-convertor/static/js/runtime-main.92a38d6d.js",
     "runtime-main.js.map": "/indeed-image-convertor/static/js/runtime-main.92a38d6d.js.map",
     "static/js/2.0821ac6a.chunk.js": "/indeed-image-convertor/static/js/2.0821ac6a.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.2fa9eb7a.chunk.js": "/indeed-image-convertor/static/js/3.2fa9eb7a.chunk.js",
     "static/js/3.2fa9eb7a.chunk.js.map": "/indeed-image-convertor/static/js/3.2fa9eb7a.chunk.js.map",
     "index.html": "/indeed-image-convertor/index.html",
-    "static/css/main.8f118ed1.chunk.css.map": "/indeed-image-convertor/static/css/main.8f118ed1.chunk.css.map",
+    "static/css/main.97413abb.chunk.css.map": "/indeed-image-convertor/static/css/main.97413abb.chunk.css.map",
     "static/js/2.0821ac6a.chunk.js.LICENSE.txt": "/indeed-image-convertor/static/js/2.0821ac6a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.92a38d6d.js",
     "static/js/2.0821ac6a.chunk.js",
-    "static/css/main.8f118ed1.chunk.css",
-    "static/js/main.645ec380.chunk.js"
+    "static/css/main.97413abb.chunk.css",
+    "static/js/main.453cdd4e.chunk.js"
   ]
 }
