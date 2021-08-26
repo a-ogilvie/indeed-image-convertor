@@ -1,4 +1,4 @@
-import ExpressiveColour from './expressiveColour'
+import EXPRESSIVE_COLOURS from './ExpressiveColours'
 
 type Colour = Uint8ClampedArray
 
@@ -42,7 +42,7 @@ function getClosestColour(inputColour: Colour): Colour {
   let closestDistance = Infinity
   let closestColour = new Uint8ClampedArray([0, 0, 0, 0])
 
-  for (const expressiveColour of ExpressiveColour) {
+  for (const expressiveColour of EXPRESSIVE_COLOURS) {
     const distance = Math.sqrt(
       (expressiveColour[0] - inputColour[0]) ** 2 +
         (expressiveColour[1] - inputColour[1]) ** 2 +
