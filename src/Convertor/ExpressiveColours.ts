@@ -79,7 +79,7 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([252, 248, 250]),
   new Uint8ClampedArray([253, 248, 244]),
   new Uint8ClampedArray([253, 248, 247]),
-  new Uint8ClampedArray([255]),
+  new Uint8ClampedArray([255, 255, 255]),
 ]
 
 export default EXPRESSIVE_COLOURS
