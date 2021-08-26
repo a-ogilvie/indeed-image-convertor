@@ -40,11 +40,10 @@ function getClosestColour(inputColour: Colour): Colour {
   let closestColour = new Uint8ClampedArray([0, 0, 0, 255])
 
   for (const expressiveColour of EXPRESSIVE_COLOURS) {
-    const distance = Math.sqrt(
+    const distance =
       (expressiveColour[0] - inputColour[0]) ** 2 +
-        (expressiveColour[1] - inputColour[1]) ** 2 +
-        (expressiveColour[2] - inputColour[2]) ** 2,
-    )
+      (expressiveColour[1] - inputColour[1]) ** 2 +
+      (expressiveColour[2] - inputColour[2]) ** 2
 
     if (distance < closestDistance) {
       closestDistance = distance
