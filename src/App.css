@@ -149,3 +149,7 @@ button {
   font-size:large;
   cursor: pointer;
 }
+
+.__rcs-handle-root {
+  color: rgb(34, 63, 125) !important;
+}
