@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  text-align: -webkit-center;
 }
 .file-uploader {
   width: 300px;
@@ -35,6 +36,11 @@
   flex-wrap: nowrap;
   padding-top: 50px;
 }
+@media (max-width: 712px) {
+  .pictureBox{
+    flex-direction: column;
+  }
+}
 .inputBox, .outputBox {
   border: 2px solid silver;
   width: 100%;
@@ -42,6 +48,13 @@
 }
 .inputBox > img, .outputBox > img  {
   width: 100%;
+}
+.inputBox > div, .outputBox > div  {
+  font-size: 1.5em;
+  font-family: Helvetica, sans-serif;
+  color: steelblue;
+  font-weight: bold;
+  margin-top: 50px;
 }
 .loader {
   font-size: 10px;
