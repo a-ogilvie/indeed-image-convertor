@@ -5,14 +5,14 @@
 .file-uploader {
   width: 300px;
   height: 150px;
-  border: 2px solid #003A9B;
+  border: 2px solid rgb(34, 63, 125);
   border-radius: 8px;
   padding: 10px;
   font-size: 16px;
 }
 
 .file-uploader--dragging {
-  border-color: #9d2b6b;
+  border-color: rgb(145, 52, 105);
 }
 
 .file-uploader__contents {
@@ -37,22 +37,24 @@
   padding-top: 50px;
 }
 @media (max-width: 712px) {
-  .pictureBox{
+  .pictureBox {
     flex-direction: column;
   }
 }
-.inputBox, .outputBox {
+.inputBox,
+.outputBox {
   border: 2px solid #2d2d2d;
   width: 100%;
   min-height: inherit;
 }
-.inputBox > img, .outputBox > img  {
+.inputBox > img,
+.outputBox > img {
   width: 100%;
 }
-.inputBox > div, .outputBox > div  {
+.inputBox > div,
+.outputBox > div {
   font-size: 1.5em;
-  font-family: Helvetica, sans-serif;
-  color: #003A9B;
+  color: rgb(34, 63, 125);
   font-weight: bold;
   margin-top: 50px;
 }
@@ -63,12 +65,32 @@
   width: 11em;
   height: 11em;
   border-radius: 50%;
-  background: #003a9b;
-  background: -moz-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, #003a9b 10%, rgba(255, 255, 255, 0) 42%);
+  background: rgb(34, 63, 125);
+  background: -moz-linear-gradient(
+    left,
+    rgb(34, 63, 125) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgb(34, 63, 125) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgb(34, 63, 125) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgb(34, 63, 125) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: linear-gradient(
+    to right,
+    rgb(34, 63, 125) 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -79,7 +101,7 @@
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #003a9b;
+  background: rgb(34, 63, 125);
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -118,4 +140,22 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  color: rgb(45, 45, 45);
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 1.125;
+  margin: 0px 0px 1rem;
+  max-width: 82%;
+}
+
+blockquote {
+  color: rgb(89, 89, 89);
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 0px 0px 2rem;
+  max-width: 100%;
 }

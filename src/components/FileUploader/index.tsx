@@ -16,8 +16,6 @@ export const FileUploader = () => {
     dragging: false,
     file: null,
   }
-  // static counter = 0;
-  let fileUploaderInput: HTMLElement | null = null
 
   const [data, setData] = React.useState(initialState)
 
@@ -93,10 +91,6 @@ export const FileUploader = () => {
     event.stopPropagation()
   }
 
-  let onSelectFileClick = () => {
-    fileUploaderInput && fileUploaderInput.click()
-  }
-
   let onFileChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setData({ ...data, file: event.target.files[0] })
@@ -121,7 +115,6 @@ export const FileUploader = () => {
     <FileUploaderPresentationalComponent
       dragging={data.dragging}
       file={data.file}
-      onSelectFileClick={onSelectFileClick}
       onDrag={overrideEventDefaults}
       onDragStart={overrideEventDefaults}
       onDragEnd={overrideEventDefaults}
@@ -131,7 +124,6 @@ export const FileUploader = () => {
       onDrop={dropListener}
     >
       <input
-        ref={(el) => (fileUploaderInput = el)}
         type="file"
         className="file-uploader__input"
         onChange={onFileChanged}

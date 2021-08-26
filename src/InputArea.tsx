@@ -10,7 +10,7 @@ const InputArea = () => {
       {before ? (
         <img alt="input" src={before} />
       ) : (
-        <div>Your picture will be shown here.</div>
+        <div>Uploaded picture will be shown here.</div>
       )}
     </div>
   )

@@ -3,7 +3,6 @@ import React from 'react'
 type PresentationalProps = {
   dragging: boolean
   file: File | null
-  onSelectFileClick: () => void
   onDrag: (event: React.DragEvent<HTMLDivElement>) => void
   onDragStart: (event: React.DragEvent<HTMLDivElement>) => void
   onDragEnd: (event: React.DragEvent<HTMLDivElement>) => void
@@ -18,7 +17,6 @@ export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> 
     const {
       dragging,
       file,
-      onSelectFileClick,
       onDrag,
       onDragStart,
       onDragEnd,
@@ -33,7 +31,7 @@ export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> 
       uploaderClasses += ' file-uploader--dragging'
     }
 
-    const fileName = file ? file.name : 'No File Uploaded!'
+    const fileName = file?.name ?? 'Upload an image'
     return (
       <div
         className={uploaderClasses}
@@ -47,9 +45,8 @@ export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> 
       >
         <div className="file-uploader__contents">
           <span className="file-uploader__file-name">{fileName}</span>
-          <span>Drag & Drop File</span>
+          <span>Drag & drop file</span>
           <span>or</span>
-          <span onClick={onSelectFileClick}>Select File</span>
           {props.children}
         </div>
       </div>
