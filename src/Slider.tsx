@@ -19,19 +19,21 @@ const Slider = () => {
         <label>Original</label>
         <label>Converted</label>
       </div>
-      <ReactCompareSlider
-        itemOne={
-          <ReactCompareSliderImage
-            src={before || `${PUBLIC_URL}/test_hackathon.png`}
-          />
-        }
-        itemTwo={
-          <ReactCompareSliderImage
-            src={after || `${PUBLIC_URL}/result_hackathon.png`}
-          />
-        }
-        onlyHandleDraggable={true}
-      />
+      <div style={{ border: 'solid rgb(34, 63, 125)', borderRadius: '5px' }}>
+        <ReactCompareSlider
+          itemOne={
+            <ReactCompareSliderImage
+              src={before || `${PUBLIC_URL}/test_hackathon.png`}
+            />
+          }
+          itemTwo={
+            <ReactCompareSliderImage
+              src={after || `${PUBLIC_URL}/result_hackathon.png`}
+            />
+          }
+          onlyHandleDraggable={true}
+        />
+      </div>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
         <a
           href={after || `${PUBLIC_URL}/result_hackathon.png`}
