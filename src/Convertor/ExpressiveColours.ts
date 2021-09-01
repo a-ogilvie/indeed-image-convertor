@@ -1,9 +1,12 @@
 const EXPRESSIVE_COLOURS = [
+  new Uint8ClampedArray([0, 0, 0]), // Black
   new Uint8ClampedArray([0, 58, 155]),
   new Uint8ClampedArray([22, 44, 91]),
   new Uint8ClampedArray([26, 48, 63]),
   new Uint8ClampedArray([31, 50, 45]),
   new Uint8ClampedArray([31, 102, 44]),
+  new Uint8ClampedArray([33, 100, 243]), // Indeed Blue
+  new Uint8ClampedArray([34, 60, 146]), // Ocean
   new Uint8ClampedArray([34, 63, 125]),
   new Uint8ClampedArray([37, 87, 167]),
   new Uint8ClampedArray([40, 69, 90]),
@@ -16,6 +19,7 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([58, 44, 22]),
   new Uint8ClampedArray([61, 48, 149]),
   new Uint8ClampedArray([64, 124, 159]),
+  new Uint8ClampedArray([64, 150, 248]), // Sky
   new Uint8ClampedArray([66, 40, 24]),
   new Uint8ClampedArray([66, 66, 66]),
   new Uint8ClampedArray([73, 31, 53]),
@@ -27,6 +31,7 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([90, 156, 196]),
   new Uint8ClampedArray([92, 57, 37]),
   new Uint8ClampedArray([99, 161, 144]),
+  new Uint8ClampedArray([102, 102, 102]), // Dark Gray
   new Uint8ClampedArray([107, 41, 77]),
   new Uint8ClampedArray([110, 84, 44]),
   new Uint8ClampedArray([112, 145, 233]),
@@ -36,6 +41,7 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([136, 185, 219]),
   new Uint8ClampedArray([139, 190, 175]),
   new Uint8ClampedArray([144, 136, 231]),
+  new Uint8ClampedArray([144, 144, 144]), // Mid Gray
   new Uint8ClampedArray([145, 52, 105]),
   new Uint8ClampedArray([146, 112, 56]),
   new Uint8ClampedArray([148, 148, 148]),
@@ -49,7 +55,9 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([184, 140, 71]),
   new Uint8ClampedArray([188, 214, 236]),
   new Uint8ClampedArray([191, 217, 208]),
+  new Uint8ClampedArray([196, 68, 136]), // Plum
   new Uint8ClampedArray([201, 210, 243]),
+  new Uint8ClampedArray([204, 204, 204]), // Light Gray
   new Uint8ClampedArray([209, 125, 71]),
   new Uint8ClampedArray([209, 206, 243]),
   new Uint8ClampedArray([210, 229, 247]),
@@ -69,7 +77,9 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([239, 241, 253]),
   new Uint8ClampedArray([240, 202, 187]),
   new Uint8ClampedArray([242, 241, 253]),
+  new Uint8ClampedArray([243, 153, 117]), // Coral
   new Uint8ClampedArray([243, 242, 241]),
+  new Uint8ClampedArray([244, 179, 14]), // Goldenrod
   new Uint8ClampedArray([244, 219, 231]),
   new Uint8ClampedArray([244, 222, 212]),
   new Uint8ClampedArray([244, 223, 200]),
@@ -84,7 +94,8 @@ const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([252, 248, 250]),
   new Uint8ClampedArray([253, 248, 244]),
   new Uint8ClampedArray([253, 248, 247]),
-  new Uint8ClampedArray([255, 255, 255]),
-]
+  new Uint8ClampedArray([255, 102, 0]), // Indeed Orange
+  new Uint8ClampedArray([255, 255, 255]), // White
+];
 
-export default EXPRESSIVE_COLOURS
+export default EXPRESSIVE_COLOURS;
