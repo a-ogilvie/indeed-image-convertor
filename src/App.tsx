@@ -1,7 +1,7 @@
-import './App.css'
-import { AppProvider } from 'context'
-import Slider from './Slider'
-import { FileUploader } from 'components/FileUploader'
+import './App.css';
+import { AppProvider } from 'context';
+import Slider from './Slider';
+import { FileUploader } from 'components/FileUploader';
 
 function App() {
   return (
@@ -39,7 +39,7 @@ function App() {
         </footer>
       </AppProvider>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

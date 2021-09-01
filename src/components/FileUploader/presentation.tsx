@@ -1,16 +1,16 @@
-import React from 'react'
+import React from 'react';
 
 type PresentationalProps = {
-  dragging: boolean
-  file: File | null
-  onDrag: (event: React.DragEvent<HTMLDivElement>) => void
-  onDragStart: (event: React.DragEvent<HTMLDivElement>) => void
-  onDragEnd: (event: React.DragEvent<HTMLDivElement>) => void
-  onDragOver: (event: React.DragEvent<HTMLDivElement>) => void
-  onDragEnter: (event: React.DragEvent<HTMLDivElement>) => void
-  onDragLeave: (event: React.DragEvent<HTMLDivElement>) => void
-  onDrop: (event: React.DragEvent<HTMLDivElement>) => void
-}
+  dragging: boolean;
+  file: File | null;
+  onDrag: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDragStart: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDragEnd: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDragOver: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDragEnter: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDragLeave: (event: React.DragEvent<HTMLDivElement>) => void;
+  onDrop: (event: React.DragEvent<HTMLDivElement>) => void;
+};
 
 export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> =
   (props) => {
@@ -24,14 +24,14 @@ export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> 
       onDragEnter,
       onDragLeave,
       onDrop,
-    } = props
+    } = props;
 
-    let uploaderClasses = 'file-uploader'
+    let uploaderClasses = 'file-uploader';
     if (dragging) {
-      uploaderClasses += ' file-uploader--dragging'
+      uploaderClasses += ' file-uploader--dragging';
     }
 
-    const fileName = file?.name ?? 'Upload an image'
+    const fileName = file?.name ?? 'Upload an image';
     return (
       <div
         className={uploaderClasses}
@@ -50,5 +50,5 @@ export const FileUploaderPresentationalComponent: React.FC<PresentationalProps> 
           {props.children}
         </div>
       </div>
-    )
-  }
+    );
+  };

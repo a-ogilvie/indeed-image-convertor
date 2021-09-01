@@ -1,15 +1,15 @@
-import React from 'react'
-import { AppContext } from './context'
+import React from 'react';
+import { AppContext } from './context';
 import {
   ReactCompareSlider,
   ReactCompareSliderImage,
-} from 'react-compare-slider'
+} from 'react-compare-slider';
 
-const { PUBLIC_URL } = process.env
+const { PUBLIC_URL } = process.env;
 
 const Slider = () => {
-  const { state } = React.useContext(AppContext)
-  const { before, after, converting } = state
+  const { state } = React.useContext(AppContext);
+  const { before, after, converting } = state;
 
   return converting ? (
     <div className="loader"></div>
@@ -43,7 +43,7 @@ const Slider = () => {
         </a>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Slider
+export default Slider;
