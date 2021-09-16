@@ -1,8 +1,12 @@
 import EXPRESSIVE_COLOURS from './ExpressiveColours';
 
+const DATA_SIZE = 4;
+const MAX_VALUE = 255;
+const ALPHA = 3;
+
 type Colour = Uint8ClampedArray;
 
-const ConvertImage = (image: HTMLImageElement): string => {
+const convertImage = (image: HTMLImageElement): string => {
   const canvas = document.createElement('canvas');
   canvas.width = image.width;
   canvas.height = image.height;
@@ -14,8 +18,8 @@ const ConvertImage = (image: HTMLImageElement): string => {
 
   const memo = new Map<string, Colour>();
 
-  for (let i = 0; i < imageData.data.length; i += 4) {
-    const inputColour = imageData.data.slice(i, i + 4);
+  for (let i = 0; i < imageData.data.length; i += DATA_SIZE) {
+    const inputColour = imageData.data.slice(i, i + DATA_SIZE);
 
     let closestColour = memo.get(inputColour.join(','));
 
@@ -27,7 +31,7 @@ const ConvertImage = (image: HTMLImageElement): string => {
       imageData.data[i],
       imageData.data[i + 1],
       imageData.data[i + 2],
-      imageData.data[i + 3],
+      imageData.data[i + 3], // eslint-disable-line no-magic-numbers
     ] = closestColour;
   }
 
@@ -37,7 +41,7 @@ const ConvertImage = (image: HTMLImageElement): string => {
 
 function getClosestColour(inputColour: Colour): Colour {
   let closestDistance = Infinity;
-  let closestColour = new Uint8ClampedArray([0, 0, 0, 255]);
+  let closestColour = new Uint8ClampedArray([0, 0, 0, MAX_VALUE]);
 
   for (const expressiveColour of EXPRESSIVE_COLOURS) {
     const distance =
@@ -51,9 +55,9 @@ function getClosestColour(inputColour: Colour): Colour {
     }
 
     if (closestDistance === 0)
-      return new Uint8ClampedArray([...closestColour, inputColour[3]]);
+      return new Uint8ClampedArray([...closestColour, inputColour[ALPHA]]);
   }
 
-  return new Uint8ClampedArray([...closestColour, inputColour[3]]);
+  return new Uint8ClampedArray([...closestColour, inputColour[ALPHA]]);
 }
-export default ConvertImage;
+export default convertImage;

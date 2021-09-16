@@ -8,26 +8,18 @@ type InitialStateType = {
   converting: boolean;
 };
 
-const initialState = {
-  file: null,
-  before: '',
-  after: '',
-  converting: false,
-};
+const initialState = { after: '', before: '', converting: false, file: null };
 
 const AppContext = createContext<{
   state: InitialStateType;
   dispatch: Dispatch<ImageActions>;
-}>({
-  state: initialState,
-  dispatch: () => null,
-});
+}>({ dispatch: () => null, state: initialState });
 
 const AppProvider: React.FC = ({ children }) => {
   const [state, dispatch] = React.useReducer(imageReducer, initialState);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ dispatch, state }}>
       {children}
     </AppContext.Provider>
   );

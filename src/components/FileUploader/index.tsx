@@ -2,44 +2,35 @@ import React, { useEffect } from 'react';
 import { FileUploaderPresentationalComponent } from './presentation';
 import { AppContext } from '../../context';
 import { Types } from '../../reducers';
-import ConvertImage from '../../Convertor';
+import convertImage from '../../Convertor';
 
-type State = {
-  dragging: boolean;
-  file: File | null;
-};
+type State = { dragging: boolean; file: File | null };
 
 let dragEventCounter = 0;
 export const FileUploader = () => {
-  let { dispatch } = React.useContext(AppContext);
-  const initialState: State = {
-    dragging: false,
-    file: null,
-  };
+  const { dispatch } = React.useContext(AppContext);
+  const initialState: State = { dragging: false, file: null };
 
   const [data, setData] = React.useState(initialState);
 
-  let process = (file: Blob) => {
+  const process = (file: Blob) => {
     const fileReader = new FileReader();
     fileReader.addEventListener('loadend', (evt) => {
       if (evt.target?.result) {
         dispatch({
-          type: Types.Upload,
           payload: {
-            file: file,
             before: evt.target.result.toString(),
             converting: true,
+            file,
           },
+          type: Types.Upload,
         });
         const img = new Image();
         img.addEventListener('load', () => {
-          let output = ConvertImage(img);
+          const output = convertImage(img);
           dispatch({
+            payload: { after: output, converting: false },
             type: Types.Converted,
-            payload: {
-              after: output,
-              converting: false,
-            },
           });
         });
         img.src = evt.target.result.toString();
@@ -47,31 +38,21 @@ export const FileUploader = () => {
     });
     fileReader.readAsDataURL(file);
   };
-  let dragenterListener = (event: React.DragEvent<HTMLDivElement>) => {
+  const dragenterListener = (event: React.DragEvent<HTMLDivElement>) => {
     overrideEventDefaults(event);
-    dragEventCounter++;
-    if (event.dataTransfer.items && event.dataTransfer.items[0]) {
+    dragEventCounter += 1;
+    if (event.dataTransfer.items && event.dataTransfer.items[0])
       setData({ ...data, dragging: true });
-    } else if (
-      event.dataTransfer.types &&
-      event.dataTransfer.types[0] === 'Files'
-    ) {
-      // This block handles support for IE - if you're not worried about
-      // that, you can omit this
-      setData({ ...data, dragging: true });
-    }
   };
 
-  let dragleaveListener = (event: React.DragEvent<HTMLDivElement>) => {
+  const dragleaveListener = (event: React.DragEvent<HTMLDivElement>) => {
     overrideEventDefaults(event);
-    dragEventCounter--;
+    dragEventCounter -= 1;
 
-    if (dragEventCounter <= 0) {
-      setData({ ...data, dragging: false });
-    }
+    if (dragEventCounter <= 0) setData({ ...data, dragging: false });
   };
 
-  let dropListener = (event: React.DragEvent<HTMLDivElement>) => {
+  const dropListener = (event: React.DragEvent<HTMLDivElement>) => {
     overrideEventDefaults(event);
     dragEventCounter = 0;
     setData({ ...data, dragging: false });
@@ -84,14 +65,14 @@ export const FileUploader = () => {
     }
   };
 
-  let overrideEventDefaults = (
+  const overrideEventDefaults = (
     event: Event | React.DragEvent<HTMLDivElement>
   ) => {
     event.preventDefault();
     event.stopPropagation();
   };
 
-  let onFileChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const onFileChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setData({ ...data, file: event.target.files[0] });
       process(event.target.files[0]);
@@ -116,19 +97,19 @@ export const FileUploader = () => {
       dragging={data.dragging}
       file={data.file}
       onDrag={overrideEventDefaults}
-      onDragStart={overrideEventDefaults}
       onDragEnd={overrideEventDefaults}
-      onDragOver={overrideEventDefaults}
       onDragEnter={dragenterListener}
       onDragLeave={dragleaveListener}
+      onDragOver={overrideEventDefaults}
+      onDragStart={overrideEventDefaults}
       onDrop={dropListener}
     >
       <input
-        type="file"
+        accept="image/*"
         className="file-uploader__input"
         onChange={onFileChanged}
-        accept="image/*"
         style={{ textAlignLast: 'center' }}
+        type="file"
       />
     </FileUploaderPresentationalComponent>
   );

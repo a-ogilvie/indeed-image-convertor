@@ -2,18 +2,13 @@ import { Reducer } from 'react';
 
 type ActionMap<M extends { [index: string]: any }> = {
   [Key in keyof M]: M[Key] extends undefined
-    ? {
-        type: Key;
-      }
-    : {
-        type: Key;
-        payload: M[Key];
-      };
+    ? { type: Key }
+    : { type: Key; payload: M[Key] };
 };
 
 export enum Types {
-  Upload = 'UPLOAD_PIC',
   Converted = 'CONVERT_DONE',
+  Upload = 'UPLOAD_PIC',
 }
 
 type ImageType = {
@@ -24,15 +19,8 @@ type ImageType = {
 };
 
 type ImagePayload = {
-  [Types.Upload]: {
-    file: Blob;
-    before: string;
-    converting: boolean;
-  };
-  [Types.Converted]: {
-    after: string;
-    converting: boolean;
-  };
+  [Types.Converted]: { after: string; converting: boolean };
+  [Types.Upload]: { file: Blob; before: string; converting: boolean };
 };
 
 export type ImageActions =
@@ -43,19 +31,19 @@ export const imageReducer: Reducer<ImageType, ImageActions> = (
   action: ImageActions
 ) => {
   switch (action.type) {
-    case Types.Upload:
-      return {
-        file: action.payload.file,
-        before: action.payload.before,
-        after: state.after,
-        converting: action.payload.converting,
-      };
     case Types.Converted:
       return {
-        file: state.file,
-        before: state.before,
         after: action.payload.after,
+        before: state.before,
         converting: action.payload.converting,
+        file: state.file,
+      };
+    case Types.Upload:
+      return {
+        after: state.after,
+        before: action.payload.before,
+        converting: action.payload.converting,
+        file: action.payload.file,
       };
     default:
       return state;

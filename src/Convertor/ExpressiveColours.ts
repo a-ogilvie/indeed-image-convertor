@@ -1,3 +1,5 @@
+/* eslint-disable no-magic-numbers */
+
 const EXPRESSIVE_COLOURS = [
   new Uint8ClampedArray([0, 0, 0]), // Black
   new Uint8ClampedArray([0, 58, 155]),

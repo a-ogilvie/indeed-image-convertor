@@ -1,4 +1,4 @@
-'use strict';
+/* eslint-disable no-console,sort-keys */
 
 /**
  * @typedef Colour
@@ -20,6 +20,7 @@ const FILETYPE = 'jpg';
 /** @type {Map<string, Colour>} */
 const memo = new Map();
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function run() {
   console.time('Time');
 
@@ -29,8 +30,10 @@ async function run() {
 
   const result = new Jimp(width, height);
 
+  /* eslint-disable id-length */
   for (let x = 0; x < width; x++) {
     for (let y = 0; y < height; y++) {
+      /* eslint-enable id-length */
       const inputColour = Jimp.intToRGBA(input.getPixelColour(x, y));
 
       let closestColour = memo.get(colourToString(inputColour));
@@ -62,11 +65,13 @@ async function run() {
  * @returns {Colour}
  */
 function hexCodeToRGB(hex) {
+  /* eslint-disable id-length,no-magic-numbers */
   const r = Number.parseInt(hex[0] + hex[1], 16);
   const g = Number.parseInt(hex[2] + hex[3], 16);
   const b = Number.parseInt(hex[4] + hex[5], 16);
 
   return { r, g, b, a: 255 };
+  /* eslint-enable id-length,no-magic-numbers */
 }
 
 /**
@@ -84,7 +89,7 @@ function colourToString(colour) {
 function getClosestColour(inputColour) {
   let closestDistance = Infinity;
   /** @type {Colour} */
-  let closestColour = { r: 0, g: 0, b: 0, a: 0 };
+  let closestColour = { r: 0, g: 0, b: 0, a: 0 }; // eslint-disable-line id-length
 
   for (const expressiveColour of expressiveColours) {
     const distance = Math.sqrt(
