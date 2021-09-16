@@ -20,7 +20,7 @@
     "web-vitals": "1.1.2"
   },
   "devDependencies": {
-    "@zehitomo/eslint-config": "^4.7.1"
+    "@zehitomo/eslint-config": "4.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -61,7 +61,7 @@
       "eslint --fix",
       "prettier --write"
     ],
-    "*.{html,css,md}": [
+    "*.{html,css,json,md}": [
       "prettier --write"
     ]
   },
@@ -71,5 +71,9 @@
   "contributors": [
     "aogilvie, chung, cyang, mstemm"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "engines": {
+    "node": "14",
+    "npm": "7"
+  }
 }
