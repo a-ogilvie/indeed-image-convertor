@@ -9,22 +9,18 @@
     "@testing-library/react": "11.2.7",
     "@testing-library/user-event": "12.8.3",
     "@types/jest": "26.0.24",
-    "@types/node": "12.20.20",
-    "@types/react": "17.0.19",
+    "@types/node": "14.17.16",
+    "@types/react": "17.0.21",
     "@types/react-dom": "17.0.9",
     "gh-pages": "3.2.3",
     "react": "17.0.2",
     "react-compare-slider": "2.1.0",
     "react-dom": "17.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "4.3.5",
     "web-vitals": "1.1.2"
   },
   "devDependencies": {
-    "@zehitomo/eslint-config": "4.7.1",
-    "husky": "7.0.2",
-    "lint-staged": "11.1.2",
-    "prettier": "2.3.2"
+    "@zehitomo/eslint-config": "^4.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
