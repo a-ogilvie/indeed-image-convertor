@@ -38,14 +38,13 @@ export const FileUploader = () => {
     });
     fileReader.readAsDataURL(file);
   };
-  const dragenterListener = (event: React.DragEvent<HTMLDivElement>) => {
+  const dragEnterListener = (event: React.DragEvent<HTMLDivElement>) => {
     overrideEventDefaults(event);
     dragEventCounter += 1;
-    if (event.dataTransfer.items && event.dataTransfer.items[0])
-      setData({ ...data, dragging: true });
+    setData({ ...data, dragging: true });
   };
 
-  const dragleaveListener = (event: React.DragEvent<HTMLDivElement>) => {
+  const dragLeaveListener = (event: React.DragEvent<HTMLDivElement>) => {
     overrideEventDefaults(event);
     dragEventCounter -= 1;
 
@@ -57,12 +56,10 @@ export const FileUploader = () => {
     dragEventCounter = 0;
     setData({ ...data, dragging: false });
 
-    if (event.dataTransfer.files && event.dataTransfer.files[0]) {
-      if (event.dataTransfer.items[0].type.split('/')[0] === 'image') {
-        setData({ ...data, file: event.dataTransfer.files[0] });
-        process(event.dataTransfer.files[0]);
-      } else alert('Please upload an image.');
-    }
+    if (event.dataTransfer.items[0].type.split('/')[0] === 'image') {
+      setData({ ...data, file: event.dataTransfer.files[0] });
+      process(event.dataTransfer.files[0]);
+    } else alert('Please upload an image.');
   };
 
   const overrideEventDefaults = (
@@ -73,7 +70,7 @@ export const FileUploader = () => {
   };
 
   const onFileChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
+    if (event.target.files?.[0]) {
       setData({ ...data, file: event.target.files[0] });
       process(event.target.files[0]);
     }
@@ -98,8 +95,8 @@ export const FileUploader = () => {
       file={data.file}
       onDrag={overrideEventDefaults}
       onDragEnd={overrideEventDefaults}
-      onDragEnter={dragenterListener}
-      onDragLeave={dragleaveListener}
+      onDragEnter={dragEnterListener}
+      onDragLeave={dragLeaveListener}
       onDragOver={overrideEventDefaults}
       onDragStart={overrideEventDefaults}
       onDrop={dropListener}
