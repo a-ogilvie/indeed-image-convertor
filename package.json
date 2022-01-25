@@ -5,9 +5,9 @@
   "private": true,
   "homepage": "https://a-ogilvie.github.io/indeed-image-convertor",
   "dependencies": {
-    "@types/node": "16.11.20",
-    "@types/react": "17.0.38",
-    "@types/react-dom": "17.0.11",
+    "@types/node": "^16",
+    "@types/react": "^17",
+    "@types/react-dom": "^17",
     "gh-pages": "3.2.3",
     "react": "17.0.2",
     "react-compare-slider": "2.2.0",
