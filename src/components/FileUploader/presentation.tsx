@@ -13,7 +13,7 @@ type PresentationalProps = {
 };
 
 export const FileUploaderPresentationalComponent: React.FC<
-  PresentationalProps
+  React.PropsWithChildren<PresentationalProps>
 > = (props) => {
   const {
     children,

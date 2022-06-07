@@ -15,7 +15,9 @@ const AppContext = createContext<{
   dispatch: Dispatch<ImageActions>;
 }>({ dispatch: () => null, state: initialState });
 
-const AppProvider: React.FC = ({ children }) => {
+const AppProvider: React.FC<React.PropsWithChildren<unknown>> = ({
+  children,
+}) => {
   const [state, dispatch] = React.useReducer(imageReducer, initialState);
 
   return (
