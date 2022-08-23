@@ -84,5 +84,8 @@
   },
   "workspaces": [
     "node"
-  ]
+  ],
+  "overrides": {
+    "jpeg-js": "^0.4.4"
+  }
 }
