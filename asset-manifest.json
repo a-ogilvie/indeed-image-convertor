@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/indeed-image-convertor/static/css/main.515f3811.css",
-    "main.js": "/indeed-image-convertor/static/js/main.94b46d54.js",
+    "main.js": "/indeed-image-convertor/static/js/main.1db580b7.js",
     "index.html": "/indeed-image-convertor/index.html",
     "main.515f3811.css.map": "/indeed-image-convertor/static/css/main.515f3811.css.map",
-    "main.94b46d54.js.map": "/indeed-image-convertor/static/js/main.94b46d54.js.map"
+    "main.1db580b7.js.map": "/indeed-image-convertor/static/js/main.1db580b7.js.map"
   },
   "entrypoints": [
     "static/css/main.515f3811.css",
-    "static/js/main.94b46d54.js"
+    "static/js/main.1db580b7.js"
   ]
 }
