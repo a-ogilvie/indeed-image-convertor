@@ -86,6 +86,7 @@
     "node"
   ],
   "overrides": {
-    "jpeg-js": "^0.4.4"
+    "jpeg-js": "^0.4.4",
+    "minimatch": ">=3.0.5"
   }
 }
