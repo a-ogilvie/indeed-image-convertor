@@ -26,30 +26,6 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "@a-ogilvie",
-      "@a-ogilvie/eslint-config/typescript-eslint",
-      "@a-ogilvie/eslint-config/react"
-    ],
-    "rules": {
-      "@typescript-eslint/no-shadow": "error",
-      "@typescript-eslint/no-unused-vars": "error",
-      "no-shadow": "off",
-      "no-unused-vars": "off",
-      "react/jsx-no-bind": [
-        "error",
-        {
-          "allowArrowFunctions": true
-        }
-      ]
-    },
-    "parserOptions": {
-      "project": "./tsconfig.json"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",

@@ -1,3 +1,4 @@
+'use strict';
 /* eslint-disable no-console,sort-keys */
 
 /**
@@ -20,7 +21,7 @@ const FILETYPE = 'jpg';
 /** @type {Map<string, Colour>} */
 const memo = new Map();
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line no-unused-vars
 async function run() {
   console.time('Time');
 
@@ -78,6 +79,19 @@ function hexCodeToRGB(hex) {
  * @param {Colour} colour
  * @returns {string}
  */
+// eslint-disable-next-line no-unused-vars
+function RGBToHexCode(colour) {
+  /* eslint-disable no-magic-numbers */
+  return `${colour.r.toString(16)}${colour.g.toString(16)}${colour.b.toString(
+    16
+  )}`;
+  /* eslint-enable no-magic-numbers */
+}
+
+/**
+ * @param {Colour} colour
+ * @returns {string}
+ */
 function colourToString(colour) {
   return `${colour.r},${colour.g},${colour.b},${colour.a}`;
 }
@@ -108,5 +122,3 @@ function getClosestColour(inputColour) {
 
   return closestColour;
 }
-
-console.log(getClosestColour(hexCodeToRGB('2d2d2d')));
